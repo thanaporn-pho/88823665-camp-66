@@ -1,99 +1,178 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <link rel="stylesheet" href="mystyle.css">
-            <title>HTML - Form</title>
-            <meta charset="UTF-8" />
-        </head>
-        <body>
-            
-            <h1> Workshop #HTML-FORM </h1>
-            <div>
-            <table>
-                <tr>
-                    <td scope="row">ชื่อ</td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td scope="row">สกุล</td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td scope="row">วัน/เดือน/ปีเกิด</td>
-                    <td><input type="date"></td>
-                </tr>
-                <tr>
-                    <td scope="row">อายุ</td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td scope="row" >เพศ</td>
-                    <td>
-                        <label for="sex"></label>
-                        <input type="radio" name="sex" id="sex">
-                        <label for="men">ชาย</label>
-                        <input type="radio" name="sex" id="sex">
-                        <label for="women">หญิง</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">รูป</td>
-                    <td><input type="file"></td>
-                </tr>
-                <tr>
-                    <td scope="row">ที่อยู่</td>
-                    <td>
-                        <textarea rows="4">
-                        </textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">สีที่ชอบ</td>
-                    <td>
-                        <label for="color"></label>
-                        <select name="color" id="color">
-                            <option value="Red">สีแดง</option>
-                            <option value="Green">สีเขียว</option>
-                            <option value="Yellow">สีเหลือง</option>
-                            <option value="Orange">สีส้ม</option>
-                            <option value="Pink">สีชมพู</option>
-                            <option value="Bule">สีฟ้า</option>
-                            <option value="White">สีขาว</option>
-                            <option value="Black">สีดำ</option>
-                            <option value="Purple">สีม่วง</option>
-                        </select>
-                    </td>                    
-                </tr>
-                <tr>
-                    <td scope="row" >แนวเพลงที่ชอบ</td>
-                    <td>
-                        <label for="Music"></label>
-                        <input type="radio" name="Music" id="Music">
-                        <label for="forLife">เพื่อชีวิต</label>
-                        <input type="radio" name="Music" id="Music">
-                        <label for="Folk">ลูกทุ่ง</label>
-                        <input type="radio" name="Music" id="Music">
-                        <label for="etc.">อื่นๆ</label>
-                    </td>
-                </tr>
-                <td scope="row"><br></td>
-                <tr>
-                    <td scope="row">
-                        <label for="allow"></label>
-                        <input type="checkbox" name="allow" id="allow">
-                        <label for="accept">ยินยอมให้เก็บข้อมูล</label>
-                    </td>
-                </tr>
-                <td scope="row"><br></td>
-                <tr>
-                    <td scope="row">
-                    <input type="reset" value="reset">
-                    </td>
-                    <td>
-                        <input type="submit" value="submit">
-                    </td>
-                </tr>
-            </table>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <title>HTML Form</title>
+    <style>
+      body {
+        font-family: "Mali", cursive;
+        background-color: antiquewhite;
+      }
+      .container {
+        max-width: 700px;
+        background-color: #bfdbbd;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        margin-top: 50px;
+      }
+      h1 {
+        text-align: center;
+        font-size: 60px;
+        color: #f6c667;
+        text-shadow: 0px 4px 10px rgba(82, 71, 47, 0.637);
+
+        
+      }
+      label {
+        font-size: 18px;
+      }
+      .form-control, .form-check-input, .form-select, .form-check-label {
+        font-size: 16px;
+      }
+      .form-check {
+        margin-top: 10px;
+      }
+      .btn {
+        width: 100px;
+      }
+      .btn-secondary {
+        background-color: #6c757d;
+      }
+      .btn-success {
+        background-color: #28a745;
+      }
+      .form-group {
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    
+      <h1>Workshop #HTML-FORM</h1>
+      <div class="container">
+      <form>
+        <!-- Name -->
+        <div class="form-group row">
+          <label for="inputName" class="col-sm-3 col-form-label">ชื่อ <span class="text-danger">*</span></label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputName" placeholder="กรุณากรอกชื่อ" required />
+          </div>
         </div>
-        </body>
-    </html>
+        
+        <!-- Surname -->
+        <div class="form-group row">
+          <label for="inputSurname" class="col-sm-3 col-form-label">สกุล <span class="text-danger">*</span></label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputSurname" placeholder="กรุณากรอกนามสกุล" required />
+          </div>
+        </div>
+        
+        <!-- Date of Birth -->
+        <div class="form-group row">
+          <label for="birthDate" class="col-sm-3 col-form-label">วัน/เดือน/ปีเกิด <span class="text-danger">*</span></label>
+          <div class="col-sm-9">
+            <input type="date" class="form-control" id="birthDate" required />
+          </div>
+        </div>
+
+        <!-- Age -->
+        <div class="form-group row">
+          <label for="age" class="col-sm-3 col-form-label">อายุ <span class="text-danger">*</span></label>
+          <div class="col-sm-9">
+            <input type="number" class="form-control" id="age" placeholder="กรุณากรอกอายุ" required min="0" />
+          </div>
+        </div>
+
+        <!-- Gender -->
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label">เพศ <span class="text-danger">*</span></label>
+          <div class="col-sm-9">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" id="male" value="ชาย" checked />
+              <label class="form-check-label" for="male">ชาย</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" id="female" value="หญิง" />
+              <label class="form-check-label" for="female">หญิง</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image Upload -->
+        <div class="form-group row">
+          <label for="image" class="col-sm-3 col-form-label">รูป <span class="text-danger">*</span></label>
+          <div class="col-sm-9">
+            <input type="file" class="form-control" id="image" accept="image/*" />
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="form-group row">
+          <label for="address" class="col-sm-3 col-form-label">ที่อยู่ <span class="text-danger">*</span></label>
+          <div class="col-sm-9">
+            <textarea class="form-control" id="address" rows="4" placeholder="กรุณากรอกที่อยู่" required></textarea>
+          </div>
+        </div>
+
+        <!-- Favorite Color -->
+        <div class="form-group row">
+          <label for="color" class="col-sm-3 col-form-label">สีที่ชอบ</label>
+          <div class="col-sm-9">
+            <select class="form-select" id="color">
+              <option value="Red">สีแดง</option>
+              <option value="Green">สีเขียว</option>
+              <option value="Yellow">สีเหลือง</option>
+              <option value="Orange">สีส้ม</option>
+              <option value="Pink">สีชมพู</option>
+              <option value="Blue">สีฟ้า</option>
+              <option value="Purple">สีม่วง</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Music Genre -->
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label">แนวเพลงที่ชอบ</label>
+          <div class="col-sm-9">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="music" id="music1" value="เพื่อชีวิต" />
+              <label class="form-check-label" for="music1">เพื่อชีวิต</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="music" id="music2" value="ลูกทุ่ง" />
+              <label class="form-check-label" for="music2">ลูกทุ่ง</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="music" id="music3" value="อื่นๆ" />
+              <label class="form-check-label" for="music3">อื่นๆ</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Consent -->
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="consent" required />
+          <label class="form-check-label" for="consent">ยินยอมให้เก็บข้อมูล</label>
+        </div>
+
+        <!-- Buttons -->
+        <div class="form-group row mt-4">
+          <div class="col-sm-6">
+            <button type="reset" class="btn btn-secondary btn-block">Reset</button>
+          </div>
+          <div class="col-sm-6">
+            <button type="submit" class="btn btn-success btn-block">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
