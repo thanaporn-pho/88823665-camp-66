@@ -16,8 +16,8 @@
             <h1>
                 <?php 
                     if(isset($_REQUEST['email'])){
-                        echo $_REQUEST['detail']:"";
-                    } 
+                        echo $_REQUEST['detail'];
+                    }
                 ?>
             </h1>
             <form method="post" action="">

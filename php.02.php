@@ -48,30 +48,38 @@
       }
       
     </style>
+
+
         <div class="container mt-5">
-            <?php 
-            $my_var = 2;
-            ?>
-            <h1>สูตรคูณแม่ <?php echo $my_var; ?></h1>
+            
+            <h1>จำนวนคู่คี่ 1-100</h1>
             <div class="content">
+                
                 <br>
                 <?php
-                    for($i = 1;$i<=12;$i++){
+                    for($i = 1;$i<=100;$i++){
                 ?>
-                        <div class="row">
-                            <div class="col h2 text-end">
-                                <?php echo $my_var." x ".$i." = " ?>
-                            </div>
-                            <div class="col h2 text-start">
-                                <?php echo $my_var * $i; ?>
-                            </div>
+                    <div class="row">
+                        <div class="col h4 text-end">
+                            <?php echo "เลข ".$i." เป็น " ?>
                         </div>
+                        <div class="col h4 text-start">
+                            <?php 
+                                if($i%2==0){
+                                    echo "จำนวนคู่";
+                                }else{
+                                    echo "จำนวนคี่";
+                                }; 
+                            ?>
+                        </div>
+                    </div>  
                 <?php
                     }
-                    
+                    echo "<br>";            
                 ?>
-                <br>
+                
             </div>
+
         </div>
     </body>
 
