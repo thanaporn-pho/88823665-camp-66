@@ -43,18 +43,18 @@
         <div class="mt-4">
             <?php
 
-            if (isset($_POST['myinput']) != null) {
-                $myvar = (int)$_POST['myinput'];
-                echo "<h3>ตารางสูตรคูณแม่ $myvar</h3>";
-                echo "<ul class='list-group'>";
+                if (isset($_POST['myinput']) != null) {
+                    $myvar = (int)$_POST['myinput'];
+                    echo "<h3>ตารางสูตรคูณแม่ $myvar</h3>";
+                    echo "<ul class='list-group'>";
 
-                //ตาราง
-                for ($i = 1; $i <= 12; $i++) {
-                    $ans = $myvar * $i;
-                    echo "<li class='list-group-item'>$myvar x $i = $ans</li>";
+                    //ตาราง
+                    for ($i = 1; $i <= 12; $i++) {
+                        $ans = $myvar * $i;
+                        echo "<li class='list-group-item'>$myvar x $i = $ans</li>";
+                    }
+                    echo "</ul>";
                 }
-                echo "</ul>";
-            }
             ?>
         </div>
     </div>
