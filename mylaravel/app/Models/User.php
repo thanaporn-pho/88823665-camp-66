@@ -42,7 +42,7 @@ class User extends Authenticatable
     {
         return [
             'email_verified_at' => 'datetime',
-            'password' => 'hashed',
+            'password' => 'hashed', /*แก้ข้อมูล ไม่สามารถเปลี่ยนกับเป็นอันเดิมได้ นอกจากจะเป็นผู้ที่พิมพ์จะสามารถย้อนข้อมูลได้*/
         ];
     }
 }
