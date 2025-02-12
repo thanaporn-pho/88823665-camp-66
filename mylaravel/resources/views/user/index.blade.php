@@ -26,12 +26,15 @@
                             <a href="{{url('/user/'.$user->id)}}">
                                 <button class="btn btn-warning">Edit</button>
                             </a>
-                            <form action="{{ url('/user') }}" method="post" style="display: inline">
+
+
+                            <form action="{{ url('/user') }}" method="post" style="display: inline" onsubmit ="return confirm_delete(this);">
                                 @csrf
                                 @method('delete')
                                 <input type="hidden" name="id" value="{{ $user->id}}" >
-                                <button type="submit"class="btn btn-danger">Delete</button>
+                                <button class="btn btn-danger">Delete</button>
                             </form>
+
                         </td>
                     </tr>
                 <?php } ?>
@@ -47,7 +50,55 @@
             <li class="page-item"><a class="page-link" href="#">3</a></li>
             <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
           </ul>
+
         </div>
+
       </div>
   </div>
+
+@endsection
+
+@section('scripts')
+<script>
+
+    function confirm_delete(form){
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: "btn btn-success",
+                cancelButton: "btn btn-danger"
+            },
+            buttonsStyling: false
+        });
+        swalWithBootstrapButtons.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, delete it!",
+
+            cancelButtonText: "No, cancel!",
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                swalWithBootstrapButtons.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+
+                });
+                form.submit();
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire({
+                title: "Cancelled",
+                text: "Your imaginary file is safe :)",
+                icon: "error"
+                });
+            }
+        });
+        return false;
+    }
+</script>
 @endsection
