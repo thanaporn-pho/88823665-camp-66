@@ -20,6 +20,7 @@ class RegisterController extends Controller
         $muser->email = $req->email;
         $muser->password = $req->password;
         $muser->save();
+        return redirect('/users');
     }
 
 }
